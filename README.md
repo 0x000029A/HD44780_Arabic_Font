@@ -6,7 +6,7 @@
 - Download the "ArabicFont.h" file and add it to your main souce code folder
 - Add the function prototype to the top of your source code file.
 ```cpp
-printAR(String arword)
+printAR(String arword);
 ```
 - Add the function body to your source code file.
 ```cpp
