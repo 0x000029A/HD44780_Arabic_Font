@@ -4,13 +4,29 @@
 - There are hardware-limitation that we can't create more than 8 custom characters at the same time.
 ## How to install
 - Download the "ArabicFont.h" file and add it to your main souce code folder
+- Add the function prototype to the top of your source code file.
+```cpp
+printAR(String arword)
+```
+- Add the function body to your source code file.
+```cpp
+void printAR(String arword) {
+  for (int i = 0; i < arword.length(); i++) {
+    for (int j = 0; j < 55; j++) {
+      if (int(arword[i]) == arFontMapping[j][0]) {
+        lcd.createChar(i, arFont[arFontMapping[j][1]]);
+        lcd.setCursor(19 - i, 0);
+        lcd.print(char(i));
+      }
+    }
+  }
+}
+```
+- See main.ino.
 ## How to use
 - The function translates a single english letter to a single arabic letter.
 - It only supports initial and final positions of a character.
-- Use the function below to write arabic words, with maximum of 8 letters (don't use spaces to maximize the letter count).
-```Cpp
-printAR(String arword)
-```
+- Use the function above to write arabic words, with maximum of 8 letters (don't use spaces to maximize the letter count).
 ## Example (in your main source code file)
 ```Cpp
 printAR("mRhbA");
