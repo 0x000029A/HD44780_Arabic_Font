@@ -1,6 +1,8 @@
 #ifndef ARABICFONT_H
 #define ARABICFONT_H
 
+void printAR(String arword);
+
 /*
 أ => a, A
 ب => b, B
